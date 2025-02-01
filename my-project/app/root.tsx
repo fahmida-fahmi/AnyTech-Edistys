@@ -10,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import Navbar from "./shared/Navbar/Navbar";
+import Footer from "./shared/Footer/Footer";
 
 
 export const links: Route.LinksFunction = () => [
@@ -48,6 +49,7 @@ export default function App() {
     <>
     <Navbar/>
     <Outlet/>
+    <Footer/>
     </>
   );
 }

@@ -61,64 +61,74 @@ const Technology = () => {
     };
 
     return (
-        <div className="xl:w-3/5 sm:w-4/5 mx-auto py-15 text-center">
-            <Header subHeading="Technology built for you" Heading="The future of finance" />
+        <div className="py-15 relative" style={{
+            background: "linear-gradient(15deg, #f1f7fe 30%, white 70%)"
+        }}>
 
-            {/* Tabs */}
-            <div className="my-6 hidden lg:block">
-                <ul className="flex flex-wrap justify-between text-center">
-                    {tabItems.map((tab, idx) => (
-                        <li key={idx} className="mx-3">
-                            <button
-                                className={`px-10 text-[18px] py-3 text-[#1080e2] cursor-pointer transition-all duration-300 rounded-full font-semibold ${index === idx
-                                    ? "bg-[#b9d9ff]"
-                                    : "border-transparent hover:bg-[#f5faff] hover:text-[#0b305b]"
-                                    }`}
-                                onClick={() => setIndex(idx)}
-                            >
-                                {tab}
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            <div className="xl:w-3/5 sm:w-4/5 mx-auto py-15  text-center " >
+                <Header subHeading="Technology built for you" Heading="The future of finance" />
 
-            {/* Tab Content */}
-            <div className="relative w-full h-84 sm:h-80 md:h-96 lg:h-[550px] overflow-hidden  mt-10 rounded-xl shadow-lg">
-                <AnimatePresence initial={false} custom={direction}>
-                    <motion.div
-                        key={index}
-                        className=" text-white text-2xl font-bold p-15"
-                        initial={{ x: direction === 1 ? "100%" : "-100%" }}
-                        animate={{ x: 0 }}
-                        exit={{ x: direction === 1 ? "-100%" : "100%" }}
-                        transition={{ duration: 0.6, ease: "easeInOut" }}
-                        drag="x"
-                        dragConstraints={{ left: 0, right: 0 }}
-                        dragElastic={0.2}
-                        onDragEnd={handleDragEnd}
-                    >
-                        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4 ">
-                            <div className="text-left ">
-                                <h1 className="text-[15px] tracking-widest font-bold text-[#1080e2] ">
-                                    {tabContent[index].title}
-                                </h1>
-                                <h2 className="text-[40px] font-semibold text-[#0b305b] py-5">
-                                    {tabContent[index].subtitle}
-                                </h2>
-                                <p className="text-[#0b3b5b] font-semibold text-[16px] py-5 pr-5">
-                                    {tabContent[index].description}
-                                </p>
-                                <p className="text-[#0b305b] font-medium text-[15px] pb-10 pr-5">
-                                    {tabContent[index].extra_info}
-                                </p>
+                {/* Tabs */}
+                <div className="my-6 hidden lg:block">
+                    <ul className="flex flex-wrap justify-between text-center">
+                        {tabItems.map((tab, idx) => (
+                            <li key={idx} className="mx-3">
+                                <button
+                                    className={`px-10 text-[18px] py-3 text-[#1080e2] cursor-pointer transition-all duration-300 rounded-full font-semibold ${index === idx
+                                        ? "bg-[#b9d9ff]"
+                                        : "border-transparent hover:bg-[#f5faff] hover:text-[#0b305b]"
+                                        }`}
+                                    onClick={() => setIndex(idx)}
+                                >
+                                    {tab}
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                {/* Tab Content */}
+                <div className="relative w-full h-84 sm:h-80 md:h-96 lg:h-[550px] overflow-hidden  mt-20 mb-10 rounded-xl shadow-lg">
+                    <AnimatePresence initial={false} custom={direction}>
+                        <motion.div
+                            key={index}
+                            className=" text-white text-2xl font-bold p-15"
+                            initial={{ x: direction === 1 ? "100%" : "-100%" }}
+                            animate={{ x: 0 }}
+                            exit={{ x: direction === 1 ? "-100%" : "100%" }}
+                            transition={{ duration: 0.6, ease: "easeInOut" }}
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={0.2}
+                            onDragEnd={handleDragEnd}
+                        >
+                            <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4 ">
+                                <div className="text-left ">
+                                    <h1 className="text-[15px] tracking-widest font-bold text-[#1080e2] ">
+                                        {tabContent[index].title}
+                                    </h1>
+                                    <h2 className="text-[40px] font-semibold text-[#0b305b] py-5">
+                                        {tabContent[index].subtitle}
+                                    </h2>
+                                    <p className="text-[#0b3b5b] font-semibold text-[16px] py-5 pr-5">
+                                        {tabContent[index].description}
+                                    </p>
+                                    <p className="text-[#0b305b] font-medium text-[15px] pb-10 pr-5">
+                                        {tabContent[index].extra_info}
+                                    </p>
+                                </div>
+                                <div className="flex flex-wrap justify-center">
+                                    <img className="w-full lg:max-w-lg lg:h-[400px] object-cover rounded-2xl shadow-md" src={tabContent[index].image} alt={tabContent[index].title} />
+                                </div>
                             </div>
-                            <div className="flex flex-wrap justify-center">
-                                <img className="w-full lg:max-w-lg lg:h-[400px] object-cover rounded-2xl shadow-md" src={tabContent[index].image} alt={tabContent[index].title} />
-                            </div>
-                        </div>
-                    </motion.div>
-                </AnimatePresence>
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                {/* Diagonal Bottom Shape */}
+                <svg className="absolute bottom-0 left-0 w-full h-40" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon points="0,100 100,10 100,100 0,100" fill="white" />
+                </svg>
             </div>
         </div>
     );

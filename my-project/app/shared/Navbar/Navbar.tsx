@@ -4,6 +4,8 @@ import DropdownMenu from "./Desktopbar/DropdownMenu.jsx";
 import LanguageDropdown from "./Desktopbar/LanguageDropdown.jsx";
 import MobileSolutionsDropdown from "./MobileNavbar/MobileSolutionsDropdown.jsx";
 import MobileLanguageDropdown from "./MobileNavbar/MobileLanguageDropdown.jsx";
+import logo from "../../Assets/logo/logo.jpg";
+import logoBlue from "../../Assets/logo/logo-blue.svg";
 
 const Navbar = () => {
   const [isMobileOpen, setMobileOpen] = useState(false);
@@ -42,7 +44,7 @@ const Navbar = () => {
       <div className="xl:w-3/5 sm:w-4/5 mx-auto flex items-center justify-between py-4">
         {/* Logo */}
         <div className="text-xl font-bold flex items-center">
-          <a href="#">ANYTECH</a>
+          <a href="#"><img src={isScrolled ? logoBlue : logo} alt="logo" /></a>
         </div>
 
         {/* Desktop Menu */}
@@ -56,9 +58,8 @@ const Navbar = () => {
         {/* Contact Us Button */}
         <a
           href="#"
-          className={`hidden lg:flex px-5 py-3 font-bold text-lg border ${
-            isScrolled ? "bg-[#fe8b53] text-white rounded-sm border-[#fe8b53] shadow-2xl hover:shadow-2xl" : "border-white text-white hover:bg-white hover:shadow-2xl hover:text-sky-600"
-          } transition-all duration-300`}
+          className={`hidden lg:flex px-5 py-3 font-bold text-lg border ${isScrolled ? "bg-[#fe8b53] text-white rounded-sm border-[#fe8b53] shadow-2xl hover:shadow-2xl" : "border-white text-white hover:bg-white hover:shadow-2xl hover:text-sky-600"
+            } transition-all duration-300`}
         >
           Contact Us →
         </a>

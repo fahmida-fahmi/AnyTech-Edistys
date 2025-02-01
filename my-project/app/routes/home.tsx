@@ -3,6 +3,8 @@ import Banner from "~/shared/Home/HeroSection/Banner";
 import  Intro  from "~/shared/Home/Intro/Intro";
 import  Philosophy  from "~/shared/Home/philosophy/philosophy";
 import  Technology  from "~/shared/Home/Tech4U/Technology";
+import  TrustedSect  from "~/shared/Home/TrustedSect/TrustedSect";
+import  Legacy  from "~/shared/Legacy/Legacy";
 
 
 export function meta({ }: Route.MetaArgs) {
@@ -19,6 +21,8 @@ export default function Home() {
      <Intro/>
      <Philosophy/>
      <Technology/>
+     <TrustedSect/>
+     <Legacy/>
      
     </>
   );
