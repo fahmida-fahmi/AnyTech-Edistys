@@ -77,13 +77,15 @@ const OurStory = () => {
                 </div>
 
                 <div className='row'>
-                    <CompanyMarquee/>
+                    <CompanyMarquee />
                 </div>
             </div>
-                {/* Diagonal Bottom Shape */}
+            {/* Diagonal Bottom Shape */}
             <svg className="absolute bottom-0 left-0 w-full h-40" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <polygon points="0,100 100,10 100,100 0,100" fill="white" />
             </svg>
+
+            
         </div>
     );
 };

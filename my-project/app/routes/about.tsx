@@ -2,6 +2,8 @@ import type { Route } from "./+types/about";
 
 import Main  from "../About/Main.jsx";
 import OurStory  from "../About/OurStory.jsx";
+import Mission from '../About/Mission.jsx'
+import Value from '../About/Value.jsx'
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -15,6 +17,8 @@ export default function About() {
     <>  
      <Main/>
      <OurStory/>
+     <Mission/>
+     <Value/>
     </>
   );
 }
