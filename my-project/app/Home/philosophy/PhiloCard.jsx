@@ -1,7 +1,7 @@
 import React from 'react';
-import card1  from "../../../Assets/philosophy/card1.svg";
-import card2  from "../../../Assets/philosophy/card2.avif";
-import card3  from "../../../Assets/philosophy/card3.svg";
+import card1  from "../../Assets/philosophy/card1.svg";
+import card2  from "../../Assets/philosophy/card2.avif";
+import card3  from "../../Assets/philosophy/card3.svg";
 const PhiloCard = () => {
 
     const cardDate = [
@@ -23,7 +23,7 @@ const PhiloCard = () => {
     ]
 
     return (
-        <div className='grid grid-cols-3 gap-10'>
+        <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 sm:mx-15  lg:mx-0'>
             {
                 cardDate.map((card, index) => {
                     return (

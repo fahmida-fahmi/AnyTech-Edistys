@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Header from "../../Header/Header";
-import customerImg from "../../../Assets/tech/cumt.avif";
-import agileImg from "../../../Assets/tech/agile.avif";
-import complianceImg from "../../../Assets/tech/compliance.avif";
-import secImg from "../../../Assets/tech/sec.avif";
+import Header from '../../shared/Header/Header';
+
+import customerImg from "../../Assets/tech/cumt.avif";
+import agileImg from "../../Assets/tech/agile.avif";
+import complianceImg from "../../Assets/tech/compliance.avif";
+import secImg from "../../Assets/tech/sec.avif";
 
 const Technology = () => {
     const tabItems = ["Customer Focused", "Agile and Adaptable", "Compliance Ready", "Secure and Safe"];
@@ -65,7 +66,7 @@ const Technology = () => {
             background: "linear-gradient(15deg, #f1f7fe 30%, white 70%)"
         }}>
 
-            <div className="xl:w-3/5 sm:w-4/5 mx-auto py-15  text-center " >
+            <div className="xl:w-3/5 sm:w-4/5 w-4/5 mx-auto py-15  text-center " >
                 <Header subHeading="Technology built for you" Heading="The future of finance" />
 
                 {/* Tabs */}
@@ -88,21 +89,21 @@ const Technology = () => {
                 </div>
 
                 {/* Tab Content */}
-                <div className="relative w-full h-84 sm:h-80 md:h-96 lg:h-[550px] overflow-hidden  mt-20 mb-10 rounded-xl shadow-lg">
+                <div className="relative w-full h-auto  lg:h-[550px] overflow-hidden  mt-20 mb-10 rounded-xl shadow-lg">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.div
                             key={index}
-                            className=" text-white text-2xl font-bold p-15"
+                            className=" text-white text-2xl font-bold lg:p-15 p-10"
                             initial={{ x: direction === 1 ? "100%" : "-100%" }}
                             animate={{ x: 0 }}
-                            exit={{ x: direction === 1 ? "-100%" : "100%" }}
+                            // exit={{ x: direction === 1 ? "-100%" : "100%" }}
                             transition={{ duration: 0.6, ease: "easeInOut" }}
                             drag="x"
                             dragConstraints={{ left: 0, right: 0 }}
                             dragElastic={0.2}
                             onDragEnd={handleDragEnd}
                         >
-                            <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4 ">
+                            <div className="lg:grid  flex-row-reverse grid-cols-1 lg:grid-cols-2 gap-4 ">
                                 <div className="text-left ">
                                     <h1 className="text-[15px] tracking-widest font-bold text-[#1080e2] ">
                                         {tabContent[index].title}
@@ -117,8 +118,8 @@ const Technology = () => {
                                         {tabContent[index].extra_info}
                                     </p>
                                 </div>
-                                <div className="flex flex-wrap justify-center">
-                                    <img className="w-full lg:max-w-lg lg:h-[400px] object-cover rounded-2xl shadow-md" src={tabContent[index].image} alt={tabContent[index].title} />
+                                <div className="flex justify-center">
+                                    <img className="w-full lg:max-w-lg lg:h-[400px] h-[250px] object-cover rounded-2xl shadow-md" src={tabContent[index].image} alt={tabContent[index].title} />
                                 </div>
                             </div>
                         </motion.div>

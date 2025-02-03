@@ -37,21 +37,21 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 
+      className={`fixed top-0 left-0 w-full transition-all duration-300 z-1000 
       ${isScrolled ? "bg-white shadow-md text-sky-600" : "bg-transparent text-white"} 
       ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
-      <div className="xl:w-3/5 sm:w-4/5 mx-auto flex items-center justify-between py-4">
+      <div className="xl:w-3/5 sm:w-4/5 w-4/5 mx-auto flex items-center justify-between py-4">
         {/* Logo */}
         <div className="text-xl font-bold flex items-center">
-          <a href="#"><img src={isScrolled ? logoBlue : logo} alt="logo" /></a>
+          <a href="/"><img src={isScrolled ? logoBlue : logo} alt="logo" /></a>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex">
           <DropdownMenu />
           <a href="#" className="hover:border-b-2 p-4 px-6 border-blue-500">Services</a>
-          <a href="#" className="hover:border-b-2 p-4 px-6 border-blue-500">About Us</a>
+          <a href="/about" className="hover:border-b-2 p-4 px-6 border-blue-500">About Us</a>
           <LanguageDropdown />
         </div>
 
